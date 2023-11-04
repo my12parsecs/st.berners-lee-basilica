@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* 初期は暗い色 */
+    z-index: 1;
+    opacity: 1; /* 初期は完全に不透明 */
+    /* pointer-events: none; イベントの対象外 */
+    transition: opacity 8s; /* アニメーション時間を設定 */
+}
+.overlay-text{
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    text-align: center;
+}
+
+.main{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://ohiostate.pressbooks.pub/app/uploads/sites/198/2019/06/axis.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* スクロールしても固定 */
+    background-position: center center;
+}
+
+.nav{
+    display: flex;
+    height: 50px;
+    width: 95%;
+    margin: auto;
+}
+
+.audio-button{
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+}
+.seal-image{
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.triangle-image{
+    width: 33px;
+    position: absolute;
+    top: 51%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+.volume-slider{
+    cursor: pointer;
+    width: 100px;
+}

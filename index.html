@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <p class="overlay-text">Enter</p>
+    </div>
+
+    <div class="main">
+        <div class="nav">
+            <audio src="./audio/Hymn-music.mp3" class="audio-music" autoplay loop></audio>
+            <audio src="./audio/1min-ambi.mp3" class="audio-ambi" autoplay loop></audio>
+
+            <div class="audio-button" id="play">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Waxseal.png" alt="" class="seal-image">
+                <img src="https://static.vecteezy.com/system/resources/previews/014/396/445/original/comic-style-triangle-play-icon-with-transparent-background-file-free-png.png" alt="" class="triangle-image">
+            </div>
+            <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="0.2" oninput="changeVolume()" class="volume-slider">
+        </div>
+    </div>
+    
+
+    <script src="./app.js"></script>
+</body>
+</html>
