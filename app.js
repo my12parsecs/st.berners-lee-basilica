@@ -1,12 +1,14 @@
 const audioMusic = document.querySelector(".audio-music")
 const audioAmbi = document.querySelector(".audio-ambi")
+
+const nav = document.querySelector(".nav")
 const audioButton = document.querySelector(".audio-button")
+const playPause = document.getElementById("play-pause")
 const volume = document.querySelector(".volume-slider")
 
 // audioElement.play();
 
 changeVolume()
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -33,6 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
             overlay.style.opacity = "0"; // 不透明度を0に設定
             overlay.style.pointerEvents = "none"; // イベントを有効にする
         }, 10); // アニメーションの遅延時間を設定（ミリ秒単位）
+
+        setTimeout(function(){
+            nav.style.display = "flex"; // nav要素を表示
+        }, 4000)
 
         // 1秒後に暗いオーバーレイを徐々に明るくするアニメーションを開始
         setTimeout(function () {
@@ -78,10 +84,17 @@ audioButton.addEventListener("click", ()=>{
         fadeVolumeIn(audioAmbi, initialVolume, volume.value, 3);
 
         audioButton.id = "pause"
+        playPause.className = "pause-image"
+        // playPause.src = "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-pause-outline-1024.png"
+        playPause.src = "https://static.vecteezy.com/system/resources/previews/027/508/193/original/pause-button-icon-on-transparent-background-stop-icon-button-free-png.png"
+        // playPause.src = ""
+        // playPause.src = ""
     }else if(audioButton.id == "pause" ){
         audioMusic.pause()
         audioAmbi.pause()
         audioButton.id = "play"
+        playPause.className = "play-image"
+        playPause.src = "https://static.vecteezy.com/system/resources/previews/014/396/445/original/comic-style-triangle-play-icon-with-transparent-background-file-free-png.png"
     }
 })
 
